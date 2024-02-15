@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-combined-app
-  namespace: argocd
+  namespace: argo
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argo.argoproj.io
 spec:
   project: production
   source:
     path: kustomize/overlays/production
-    repoURL: https://github.com/devopsparadox/argo-combined-app
+    repoURL: https://github.com/ammarwa/argo-combined-app
     targetRevision: HEAD
     kustomize:
       images:
